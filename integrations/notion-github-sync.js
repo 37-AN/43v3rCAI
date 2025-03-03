@@ -88,11 +88,6 @@ async function syncGitHubToNotion() {
                     select: {
                         name: repo.archived ? "Archived" : "Active"
                     }
-                },
-                "Last Updated": {
-                    date: {
-                        start: new Date().toISOString()
-                    }
                 }
             }
         });
