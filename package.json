@@ -1,0 +1,53 @@
+{
+  "name": "notion-database-creator",
+  "version": "1.0.0",
+  "description": "Web app to create Notion databases",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "@notionhq/client": "2.2.16",
+    "@slack/web-api": "6.11.2",
+    "@octokit/rest": "^19.0.13",
+    "body-parser": "1.20.3",
+    "chart.js": "4.4.1",
+    "cookie-parser": "1.4.7",
+    "cors": "2.8.5",
+    "dotenv": "16.4.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "7.1.5",
+    "helmet": "7.1.0",
+    "morgan": "1.10.0",
+    "node-cron": "3.0.3",
+    "nodemailer": "6.9.9",
+    "path-to-regexp": "^6.3.0",
+    "send": "0.19.0",
+    "serve-static": "1.16.1",
+    "winston": "3.11.0"
+  },
+  "devDependencies": {
+    "eslint": "8.56.0",
+    "nodemon": "3.0.3",
+    "prettier": "3.2.5"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "create-dbs": "node create-databases.js",
+    "dev": "npx nodemon --experimental-json-modules server.js",
+    "sync": "curl http://localhost:3000/sync",
+    "test-github": "node test-github-integration.js",
+    "webhook-setup": "node integrations/webhook-setup.js",
+    "security-check": "npm audit",
+    "security-fix": "npm audit fix",
+    "update-deps": "npm update",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "logs": "tail -f logs/combined.log",
+    "backup": "node utils/backup.js",
+    "monitor": "node utils/monitor.js",
+    "audit-fix": "npm audit fix --force && npm install",
+    "security-update": "npm update && npm audit fix --force"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

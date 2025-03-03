@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion Database Creator</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Notion Database Creator</h1>
+      <table>
+        <tr>
+          <td>
+            <h3>1. Create a new database</h3>
+            <form id="databaseForm">
+              <label for="dbName">Database name</label>
+              <input type="text" id="dbName" required />
+              <input type="submit" value="Create Database" />
+            </form>
+          </td>
+          <td id="dbResponse"></td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html> 
